@@ -6,18 +6,17 @@ import { Link } from 'react-router-dom';
 
 const Login = () => {
     return (
-        <div className="hero min-h-screen bg-base-100">
-            <div className="hero-content flex-col lg:flex-row lg:gap-8">
+        <div className="hero pt-14 pb-20 bg-base-100">
+            <div className="hero-content flex-col lg:flex-row gap-8">
                 <div className="w-full lg:w-1/2">
-                    <img src={loginImg} alt="" />
+                    <img src={loginImg} alt="login" />
                 </div>
-                <div className="card flex-shrink-0 w-full md:w-1/2 shadow-xl bg-base-100">
+                <div className="card flex-shrink-0 w-full md:w-1/2 shadow-lg border-2 bg-base-100">
                     <div className="card-body">
+                        <div className="flex flex-col items-center text-center gap-5 mb-2">
+                            <h3 className="text-3xl font-medium">Login</h3>
+                        </div>
                         <form>
-                            <div className="flex flex-col items-center text-center gap-5 mb-4">
-                                <BiLogIn className="text-3xl" />
-                                <h3 className="text-3xl font-medium ml-2">Login</h3>
-                            </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text text-xl">Email</span>
@@ -31,10 +30,10 @@ const Login = () => {
                                 <input type="password" name="password" placeholder="Password" className="input input-bordered" />
                             </div>
                             <div className="form-control mt-6">
-                                <input type="submit" value="Login" className="btn btn-warning text-lg" />
+                                <input type="submit" value="Login" className="btn btn-warning text-lg capitalize" />
                             </div>
                         </form>
-                        <div className="divider my-10">Or Login With</div>
+                        <div className="divider my-5">Or</div>
                         <div className="flex justify-center">
                             <button className="btn bg-sky-600 hover:bg-sky-700 border-0 flex items-center gap-3 rounded-xl">
                                 <FaGoogle className="text-xl font-bold" />
@@ -42,7 +41,7 @@ const Login = () => {
                             </button>
                         </div>
                         <p className="text-center mt-6 text-lg font-medium">
-                            Don't Have An Account?  
+                            Don't Have An Account?
                             <Link to="/register" className="text-orange-600 ms-2 font-semibold text-xl">Register.</Link>
                         </p>
                     </div>
