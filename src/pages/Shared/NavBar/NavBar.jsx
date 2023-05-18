@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import ActiveLink from '../ActiveLink/ActiveLink';
 import { Link } from 'react-router-dom';
 import { GiHoodedFigure } from "react-icons/gi";
+import { AuthContext } from '../../../providers/AuthProvider';
 
 const NavBar = () => {
-    const user = null;
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => {
+                console.log(error);
+            });
+    }
 
     const navItems = <>
         <li><ActiveLink to="/">Home</ActiveLink></li>
@@ -15,12 +24,34 @@ const NavBar = () => {
                 <li><ActiveLink to="/mytoys">MyToys</ActiveLink></li>
                 <li><ActiveLink to="/addatoy">Add A Toy</ActiveLink></li>
                 <li>
-                    <div className="w-10 rounded-full">
-                        <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                    <div className="dropdown dropdown-end dropdown-hover hover:bg-transparent">
+                        <label tabIndex={1} className="btn btn-ghost btn-circle avatar">
+                            <div className="w-10 rounded-full">
+                                <img src={user?.photoURL} />
+                            </div>
+                        </label>
+                        <ul tabIndex={0} className="mr-48 lg:mr-0 lg:mt-32 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
+                            <li>
+                                <h4 className="justify-between">
+                                    {user?.displayName}
+                                </h4>
+                            </li>
+                        </ul>
                     </div>
                 </li>
+                <li>
+                    <button onClick={handleLogOut} className="btn btn-warning ms-2 px-6 capitalize text-base">
+                        Logout
+                    </button>
+                </li>
             </> :
-                <li><ActiveLink to="/login">Login</ActiveLink></li>
+                <li>
+                    <ActiveLink to="/login">
+                        <button className="btn btn-warning px-6 capitalize text-base">
+                            Login
+                        </button>
+                    </ActiveLink>
+                </li>
         }
     </>
 
@@ -41,7 +72,7 @@ const NavBar = () => {
                         {navItems}
                     </ul>
                 </div>
-                <ul className="menu menu-horizontal px-1 hidden lg:flex">
+                <ul className="menu menu-horizontal px-1 hidden lg:flex lg:items-center">
                     {navItems}
                 </ul>
             </div>
