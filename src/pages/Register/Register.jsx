@@ -20,6 +20,7 @@ const Register = () => {
         const password = form.password.value;
 
         // console.log(name, photo, email, password);
+
         setError('');
         setSuccess('');
 
@@ -85,8 +86,8 @@ const Register = () => {
                                 <input type="password" name="password" placeholder="Password" className="input input-bordered" required />
                             </div>
 
-                            <p className="font-medium text-lg text-red-500">{error}</p>
-                            <p className="font-medium text-lg text-green-600">{success}</p>
+                            <p className="font-medium text-lg text-red-500 mt-1">{error}</p>
+                            <p className="font-medium text-lg text-green-600 mt-1">{success}</p>
 
                             <div className="form-control mt-6">
                                 <input type="submit" value="Register" className="btn btn-warning text-lg capitalize" />
