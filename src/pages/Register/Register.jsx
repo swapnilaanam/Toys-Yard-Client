@@ -7,7 +7,7 @@ const Register = () => {
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
 
-    const { createUser, updateUser } = useContext(AuthContext);
+    const { createUser, updateUser, logOut } = useContext(AuthContext);
 
     const handleRegister = event => {
         event.preventDefault();
@@ -33,6 +33,12 @@ const Register = () => {
                 handleUpdateUser(createdUser, name, photo);
 
                 form.reset();
+
+                logOut()
+                    .then(() => { })
+                    .catch(error => {
+                        console.log(error);
+                    });
             })
             .catch(error => {
                 console.log(error);
