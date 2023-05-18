@@ -8,7 +8,7 @@ const Login = () => {
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
 
-    const { signInUser } = useContext(AuthContext);
+    const { signInUser, signInWithGoogle } = useContext(AuthContext);
 
     const handleLogin = event => {
         event.preventDefault();
@@ -34,6 +34,22 @@ const Login = () => {
                 setError(error.message);
             });
 
+    }
+
+    const handleSignInWithGoogle = () => {
+        setError('');
+        setSuccess('');
+
+        signInWithGoogle()
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+                setSuccess('User Logged In Successfully...');
+            })
+            .catch(error => {
+                console.log(error);
+                setError(error.message);
+            });
     }
 
     return (
@@ -70,7 +86,7 @@ const Login = () => {
                         </form>
                         <div className="divider my-5">Or</div>
                         <div className="flex justify-center">
-                            <button className="btn bg-sky-600 hover:bg-sky-700 border-0 flex items-center gap-3 rounded-xl">
+                            <button onClick={handleSignInWithGoogle} className="btn bg-sky-600 hover:bg-sky-700 border-0 flex items-center gap-3 rounded-xl">
                                 <FaGoogle className="text-xl font-bold" />
                                 <span className="text-lg capitalize"> Sign In With Google</span>
                             </button>
