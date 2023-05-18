@@ -7,16 +7,18 @@ const Footer = () => {
     return (
         <footer className="footer footer-center flex justify-between items-center py-8 px-16 bg-base-200 text-base-content rounded gap-8 border-t-2 shadow-sm">
             <div>
+                <div className="space-y-2">
+                    <h3 className="text-2xl font-semibold">Contact Us</h3>
+                    <p className="text-base font-medium">Phone: 01678453187</p>
+                    <p className="text-base font-medium">Email: contact@toysyard.com</p>
+                </div>
+            </div>
+            <div>
                 <div className="flex text-xl text-orange-500">
                     <GiHoodedFigure className="text-3xl" />
                     <span className="ml-2 font-bold">Toys Yard</span>
                 </div>
-                <div className="space-y-1 mt-2">
-                    <h3 className="text-2xl font-semibold">Contact Us</h3>
-                    <p className="text-base font-medium">Phone: 01678453187</p>
-                    <p className="text-base font-medium">Email: contact@toysyard.com</p>
-                    <p className="text-base font-medium">Address: Azadi 51, Bananai, Dhaka</p>
-                </div>
+                <p className="text-base font-medium">Address: Azadi 51, Bananai, Dhaka.</p>
             </div>
             <div>
                 <div className="grid grid-flow-col gap-10">
