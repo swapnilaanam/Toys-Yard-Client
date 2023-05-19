@@ -1,0 +1,8 @@
+.react-tabs__tab--selected {
+    background: mediumseagreen;
+    border-radius: 0;
+    border: 0 !important;
+    border: none !important;
+    border-radius: 0;
+    border-color: transparent;
+}
