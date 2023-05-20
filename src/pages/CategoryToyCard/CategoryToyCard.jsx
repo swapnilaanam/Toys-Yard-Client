@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Rating } from '@smastrom/react-rating'
-import '@smastrom/react-rating/style.css'
+import { Rating } from '@smastrom/react-rating';
+import '@smastrom/react-rating/style.css';
 
 const CategoryToyCard = ({ toyInfo }) => {
     const { _id, toyPhoto, toyName, price, rating } = toyInfo;
