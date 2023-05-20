@@ -17,25 +17,27 @@ const ShopByCategory = () => {
     }, []);
 
     useEffect(() => {
-        fetch('http://localhost:5000/toys')
+        fetch('http://localhost:5000/toys/category/marvel')
             .then(res => res.json())
-            .then(data => {
+            .then(data => setMarvelToys(data));
+    }, []);
 
-                const marvel = data.filter(toy => toy.subCategory === 'Marvel');
-                setMarvelToys(marvel);
+    useEffect(() => {
+        fetch('http://localhost:5000/toys/category/dc')
+            .then(res => res.json())
+            .then(data => setDcToys(data));
+    }, []);
 
-                const dc = data.filter(toy => toy.subCategory === 'DC');
-                setDcToys(dc);
-
-                const naruto = data.filter(toy => toy.subCategory === 'Naruto');
-                setNarutoToys(naruto);
-            });
-    }, [])
+    useEffect(() => {
+        fetch('http://localhost:5000/toys/category/naruto')
+            .then(res => res.json())
+            .then(data => setNarutoToys(data));
+    }, []);
 
     return (
         <div>
             <h3 className="text-center text-3xl font-semibold">Shop By Category</h3>
-            <Tabs className="max-w-5xl mx-auto mt-12">
+            <Tabs className="max-w-7xl mx-auto mt-12">
                 <TabList className="w-full flex justify-center">
                     {
                         subCategories.map(subCategory => <Tab
@@ -48,7 +50,7 @@ const ShopByCategory = () => {
                 </TabList>
 
                 <TabPanel>
-                    <div className="my-10">
+                    <div className="py-16 flex justify-center items-center gap-20">
                         {
                             marvelToys.map(marvelToy => <CategoryToyCard
                                 key={marvelToy._id}
@@ -59,7 +61,7 @@ const ShopByCategory = () => {
                     </div>
                 </TabPanel>
                 <TabPanel>
-                    <div className="my-10">
+                    <div className="py-16 flex justify-center items-center gap-20">
                         {
                             dcToys.map(dcToy => <CategoryToyCard
                                 key={dcToy._id}
@@ -70,7 +72,7 @@ const ShopByCategory = () => {
                     </div>
                 </TabPanel>
                 <TabPanel>
-                    <div className="my-10">
+                    <div className="py-16 flex justify-center items-center gap-20">
                         {
                             narutoToys.map(narutoToy => <CategoryToyCard
                                 key={narutoToy._id}

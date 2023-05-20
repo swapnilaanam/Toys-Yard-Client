@@ -9,7 +9,6 @@ const Home = () => {
             <Banner></Banner>
             <Gallery></Gallery>
             <ShopByCategory></ShopByCategory>
-            <h2>Home</h2>
         </div>
     );
 };

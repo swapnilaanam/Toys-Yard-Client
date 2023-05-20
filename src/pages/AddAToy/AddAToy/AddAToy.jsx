@@ -107,13 +107,13 @@ const AddAToy = () => {
                             <label className="label">
                                 <span className="label-text text-xl font-medium">Price</span>
                             </label>
-                            <input type="number" name="price" placeholder="Price" className="input border-opacity-30 focus:outline-none focus:ring focus:ring-blue-200" required />
+                            <input type="text" name="price" placeholder="Price" className="input border-opacity-30 focus:outline-none focus:ring focus:ring-blue-200" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text text-xl font-medium">Rating</span>
                             </label>
-                            <input type="number" name="rating" placeholder="Rating (From 0-5)" className="input border-opacity-30 focus:outline-none focus:ring focus:ring-blue-200" required />
+                            <input type="text" name="rating" placeholder="Rating (From 0-5)" className="input border-opacity-30 focus:outline-none focus:ring focus:ring-blue-200" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
