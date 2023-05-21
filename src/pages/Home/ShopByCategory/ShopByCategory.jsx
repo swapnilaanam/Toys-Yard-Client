@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import './ShopByCategory.css';
-import CategoryToyCard from '../../CategoryToyCard/CategoryToyCard';
+import CategoryToyCard from '../CategoryToyCard/CategoryToyCard';
 
 const ShopByCategory = () => {
     const [subCategories, setSubCategories] = useState([]);
@@ -37,8 +37,8 @@ const ShopByCategory = () => {
     return (
         <div>
             <h3 className="text-center text-3xl font-semibold">Shop By Category</h3>
-            <Tabs className="max-w-7xl mx-auto mt-12">
-                <TabList className="w-full flex justify-center">
+            <Tabs className="max-w-7xl mx-4 lg:mx-auto mt-12">
+                <TabList className="w-full flex flex-col lg:flex-row justify-center">
                     {
                         subCategories.map(subCategory => <Tab
                             className="bg-slate-300 px-16 py-3 cursor-pointer text-xl font-medium"
@@ -50,7 +50,7 @@ const ShopByCategory = () => {
                 </TabList>
 
                 <TabPanel>
-                    <div className="py-16 flex justify-center items-center gap-20">
+                    <div className="py-16 flex flex-col lg:flex-row justify-center items-center gap-20">
                         {
                             marvelToys.map(marvelToy => <CategoryToyCard
                                 key={marvelToy._id}
@@ -61,7 +61,7 @@ const ShopByCategory = () => {
                     </div>
                 </TabPanel>
                 <TabPanel>
-                    <div className="py-16 flex justify-center items-center gap-20">
+                    <div className="py-16 flex flex-col lg:flex-row justify-center items-center gap-20">
                         {
                             dcToys.map(dcToy => <CategoryToyCard
                                 key={dcToy._id}
@@ -72,7 +72,7 @@ const ShopByCategory = () => {
                     </div>
                 </TabPanel>
                 <TabPanel>
-                    <div className="py-16 flex justify-center items-center gap-20">
+                    <div className="py-16 flex flex-col lg:flex-row justify-center items-center gap-20">
                         {
                             narutoToys.map(narutoToy => <CategoryToyCard
                                 key={narutoToy._id}

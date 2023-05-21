@@ -4,7 +4,7 @@ import '@smastrom/react-rating/style.css';
 
 const Reviews = () => {
     return (
-        <div class="py-24">
+        <div class="py-20">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h3 class="text-3xl font-semibold text-gray-800 mb-16 text-center">Customer Reviews</h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 mt-12">
