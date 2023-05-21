@@ -12,7 +12,7 @@ const MyToys = () => {
     const { user } = useContext(AuthContext);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/toys/mytoys?email=${user?.email}`)
+        fetch(`https://toy-marketplace-server-gray-beta.vercel.app/toys/mytoys?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setMyToys(data));
     }, []);
@@ -29,7 +29,7 @@ const MyToys = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/toys/${id}`, {
+                fetch(`https://toy-marketplace-server-gray-beta.vercel.app/toys/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -51,13 +51,13 @@ const MyToys = () => {
     }
 
     const sortByPriceAscending = () => {
-        fetch(`http://localhost:5000/toys/sort?price=Ascending&email=${user?.email}`)
+        fetch(`https://toy-marketplace-server-gray-beta.vercel.app/toys/sort?price=Ascending&email=${user?.email}`)
             .then(res => res.json())
             .then(data => setMyToys(data));
     }
 
     const sortByPriceDescending = () => {
-        fetch(`http://localhost:5000/toys/sort?price=Descending&email=${user?.email}`)
+        fetch(`https://toy-marketplace-server-gray-beta.vercel.app/toys/sort?price=Descending&email=${user?.email}`)
             .then(res => res.json())
             .then(data => setMyToys(data));
     }

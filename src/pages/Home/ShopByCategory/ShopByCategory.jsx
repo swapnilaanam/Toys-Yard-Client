@@ -11,25 +11,25 @@ const ShopByCategory = () => {
     const [narutoToys, setNarutoToys] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/subcategories')
+        fetch('https://toy-marketplace-server-gray-beta.vercel.app/subcategories')
             .then(res => res.json())
             .then(data => setSubCategories(data));
     }, []);
 
     useEffect(() => {
-        fetch('http://localhost:5000/toys/category/marvel')
+        fetch('https://toy-marketplace-server-gray-beta.vercel.app/toys/category/marvel')
             .then(res => res.json())
             .then(data => setMarvelToys(data));
     }, []);
 
     useEffect(() => {
-        fetch('http://localhost:5000/toys/category/dc')
+        fetch('https://toy-marketplace-server-gray-beta.vercel.app/toys/category/dc')
             .then(res => res.json())
             .then(data => setDcToys(data));
     }, []);
 
     useEffect(() => {
-        fetch('http://localhost:5000/toys/category/naruto')
+        fetch('https://toy-marketplace-server-gray-beta.vercel.app/toys/category/naruto')
             .then(res => res.json())
             .then(data => setNarutoToys(data));
     }, []);

@@ -11,7 +11,7 @@ const AddAToy = () => {
     const { user } = useContext(AuthContext);
 
     useEffect(() => {
-        fetch('http://localhost:5000/subcategories')
+        fetch('https://toy-marketplace-server-gray-beta.vercel.app/subcategories')
             .then(res => res.json())
             .then(data => setSubCategories(data));
     }, []);
@@ -35,7 +35,7 @@ const AddAToy = () => {
 
         // console.log(newToy);
 
-        fetch(`http://localhost:5000/toys`, {
+        fetch(`https://toy-marketplace-server-gray-beta.vercel.app/toys`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

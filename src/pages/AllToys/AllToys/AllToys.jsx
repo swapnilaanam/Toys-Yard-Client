@@ -18,7 +18,7 @@ const AllToys = () => {
 
         const searchFieldValue = form.toyname.value;
 
-        fetch(`http://localhost:5000/toys/search/toyname?name=${searchFieldValue}`)
+        fetch(`https://toy-marketplace-server-gray-beta.vercel.app/toys/search/toyname?name=${searchFieldValue}`)
             .then(res => res.json())
             .then(data => setAllToys(data));
     }
