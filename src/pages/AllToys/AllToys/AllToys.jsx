@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import AllToyRow from '../AllToyRow/AllToyRow';
 import './AllToys.css';
+import useTitle from '../../../hooks/useTitle';
 
 const AllToys = () => {
+    useTitle('All Toys');
+
     const loadedAllToys = useLoaderData();
 
     const [allToys, setAllToys] = useState(loadedAllToys);

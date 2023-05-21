@@ -2,8 +2,11 @@ import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { Rating } from '@smastrom/react-rating';
 import '@smastrom/react-rating/style.css';
+import useTitle from '../../../hooks/useTitle';
 
 const ToyDetails = () => {
+    useTitle('Toy Details');
+
     const toyDetails = useLoaderData();
 
     const { toyPhoto, toyName, sellerName, sellerEmail, price, rating, quantity, description } = toyDetails;

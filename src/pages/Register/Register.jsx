@@ -2,8 +2,11 @@ import React, { useContext, useState } from 'react';
 import loginImg from '../../assets/images/login-2.png';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 
 const Register = () => {
+    useTitle('Register');
+
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
 
