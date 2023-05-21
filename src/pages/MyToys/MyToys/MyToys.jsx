@@ -47,11 +47,29 @@ const MyToys = () => {
         })
     }
 
-    return (
-        <div className="py-20">
-            <h2 className="text-3xl font-semibold text-center">My Toys</h2>
-            <div className="max-w-7xl mx-4 lg:mx-auto flex justify-end items-center mt-7">
+    const sortByPriceAscending = () => {
+        fetch(`http://localhost:5000/toys/sort?price=Ascending&email=${user?.email}`)
+            .then(res => res.json())
+            .then(data => setMyToys(data));
+    }
 
+    const sortByPriceDescending = () => {
+        fetch(`http://localhost:5000/toys/sort?price=Descending&email=${user?.email}`)
+            .then(res => res.json())
+            .then(data => setMyToys(data));
+    }
+
+    return (
+        <div className="py-16 min-h-screen">
+            <h2 className="text-3xl font-semibold text-center">My Toys</h2>
+
+            <div className="max-w-[1380px] mx-4 lg:mx-auto flex justify-end gap-3 mt-8">
+                <button onClick={sortByPriceAscending} className='btn border-0 bg-sky-500 hover:bg-sky-600 text-white hover:text-white'>
+                    Sort By Price In Ascending Order
+                </button>
+                <button onClick={sortByPriceDescending} className='btn border-0 '>
+                    Sort By Price In Descending Order
+                </button>
             </div>
 
             <div className="overflow-x-auto max-w-[1380px] mx-4 lg:mx-auto mt-14">
