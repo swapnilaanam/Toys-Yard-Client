@@ -9,11 +9,50 @@ const UpdateToy = () => {
 
     const { _id, price, quantity, description } = toy;
 
+    const handleUpdateToy = event => {
+        event.preventDefault();
+
+        const form = event.target;
+
+        const price = form.price.value;
+        const quantity = form.quantity.value;
+        const description = form.description.value;
+
+        const updatedToy = {
+            price,
+            quantity,
+            description
+        }
+
+        console.log(updatedToy);
+
+        fetch(`http://localhost:5000/toys/${_id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(updatedToy)
+        })
+            .then(res => res.json())
+            .then(data => {
+                // console.log(data);
+                if (data.modifiedCount) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Toy Updated Successfully!',
+                        icon: 'success',
+                        confirmButtonText: 'Okay'
+                    });
+                    navigate('/mytoys');
+                }
+            });
+    }
+
     return (
         <div className="bg-[cornsilk] bg-opacity-50 py-20">
             <div className="max-w-2xl mx-auto p-10 pt-8 bg-base-100 border-2 rounded-lg shadow-lg">
                 <h2 className="text-2xl text-center font-semibold mb-4">Update Toy</h2>
-                <form>
+                <form onSubmit={handleUpdateToy}>
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text text-xl font-medium">Price</span>
