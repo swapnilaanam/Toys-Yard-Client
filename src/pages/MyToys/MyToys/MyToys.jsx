@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../../providers/AuthProvider';
 import MyToyRow from '../MyToyRow/MyToyRow';
+import Swal from 'sweetalert2/dist/sweetalert2.js'
 
 const MyToys = () => {
     const [myToys, setMyToys] = useState([]);
@@ -12,6 +13,39 @@ const MyToys = () => {
             .then(res => res.json())
             .then(data => setMyToys(data));
     }, []);
+
+    const handleDeleteToy = id => {
+        Swal.fire({
+            title: 'Are you sure, You want to delete?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                fetch(`http://localhost:5000/toys/${id}`, {
+                    method: 'DELETE'
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        // console.log(data);
+                        if (data.deletedCount > 0) {
+                            Swal.fire(
+                                'Deleted!',
+                                'Toy Deleted Successfully!',
+                                'success'
+                            );
+
+                            const remaining = myToys.filter(toy => toy._id !== id);
+                            setMyToys(remaining);
+                        }
+                    })
+            }
+        })
+    }
 
     return (
         <div className="py-20">
@@ -37,6 +71,7 @@ const MyToys = () => {
                             myToys.map(toy => <MyToyRow
                                 key={toy._id}
                                 toy={toy}
+                                handleDeleteToy={handleDeleteToy}
                             >
                             </MyToyRow>)
                         }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const MyToyRow = ({ toy }) => {
+const MyToyRow = ({ toy, handleDeleteToy }) => {
     const { _id, sellerName, toyName, subCategory, price, quantity } = toy;
 
     return (
@@ -32,8 +32,8 @@ const MyToyRow = ({ toy }) => {
                 <Link to={`/toy/update/${_id}`}>
                     <button className="btn btn-warning capitalize">Edit</button>
                 </Link>
-                <button className="btn bg-red-500 border-red-500 hover:bg-red-500 hover:text-white
-                 hover:border-red-500 capitalize"
+                <button onClick={() => handleDeleteToy(_id)} className="btn bg-red-500 border-red-500
+                 hover:bg-red-500 hover:text-white hover:border-red-500 capitalize"
                 >
                     Delete
                 </button>
