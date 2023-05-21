@@ -52,9 +52,9 @@ const ShopByCategory = () => {
                 <TabPanel>
                     <div className="py-16 flex flex-col lg:flex-row justify-center items-center gap-20">
                         {
-                            marvelToys.map(marvelToy => <CategoryToyCard
-                                key={marvelToy._id}
-                                toyInfo={marvelToy}
+                            dcToys.map(dcToy => <CategoryToyCard
+                                key={dcToy._id}
+                                toyInfo={dcToy}
                             >
                             </CategoryToyCard>)
                         }
@@ -63,9 +63,9 @@ const ShopByCategory = () => {
                 <TabPanel>
                     <div className="py-16 flex flex-col lg:flex-row justify-center items-center gap-20">
                         {
-                            dcToys.map(dcToy => <CategoryToyCard
-                                key={dcToy._id}
-                                toyInfo={dcToy}
+                            marvelToys.map(marvelToy => <CategoryToyCard
+                                key={marvelToy._id}
+                                toyInfo={marvelToy}
                             >
                             </CategoryToyCard>)
                         }
