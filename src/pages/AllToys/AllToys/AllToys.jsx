@@ -24,7 +24,7 @@ const AllToys = () => {
     }
 
     return (
-        <div className="py-20">
+        <div className="py-20 bg-yellow-100">
             <h2 className="text-3xl font-semibold text-center">All Toys</h2>
             <div class="max-w-7xl mx-4 lg:mx-auto flex justify-end items-center mt-7">
                 <form onSubmit={handleSearch}>

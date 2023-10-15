@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "feedback": "I purchased an Iron man action figure toy for my little son. My son was delighted to find it so realistic.",
+        "name": "Rehan Kabir",
+        "rating": 4.5
+    },
+    {
+        "id": 2,
+        "feedback": "I purchased from this website for several times now for my daughter. Always gives solid built quality toys.",
+        "name": "Maria Jahan",
+        "rating": 4.8
+    },
+    {
+        "id": 3,
+        "feedback": "I have no issue with the action figures. Buy you guys need to work on your delivery time. Its still slow",
+        "name": "Ahsan Ahmed",
+        "rating": 4.2
+    }
+]

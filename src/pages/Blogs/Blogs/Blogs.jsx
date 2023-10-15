@@ -5,16 +5,16 @@ const Blogs = () => {
     useTitle('Blogs');
 
     return (
-        <div className="py-20 bg-[cornsilk] px-4">
+        <div className="py-20 bg-yellow-100 px-4">
             <h2 className="text-4xl text-center font-medium mb-16">Welcome To My Blogs</h2>
             <div>
                 <div className="max-w-4xl mx-auto border-2 bg-base-100 rounded shadow-xl mb-14">
-                    <div className="px-10 py-5 bg-base-300">
+                    <div className="px-4 md:px-10 py-5 bg-base-300">
                         <h4 className="text-2xl font-medium">
-                            1. What is an access token and refresh token? How do they work and where should we store them on the        client-side
+                            1. What is an access token and refresh token? How do they work and where should we store them on the client-side?
                         </h4>
                     </div>
-                    <div className="px-10 py-5 font-medium space-y-8">
+                    <div className="px-4 md:px-10 py-5 font-medium space-y-8">
                         <p>
                             Access token is a short lived token which allows access to resources for a short time period.
                         </p>
@@ -37,12 +37,12 @@ const Blogs = () => {
                 </div>
 
                 <div className="max-w-4xl mx-auto border-2 bg-base-100 rounded shadow-xl mb-14">
-                    <div className="px-10 py-5 bg-base-300">
+                    <div className="px-4 md:px-10 py-5 bg-base-300">
                         <h4 className="text-2xl font-medium">
                             2. Compare SQL and NoSQL databases?
                         </h4>
                     </div>
-                    <div className="px-10 py-5 font-medium space-y-8">
+                    <div className="px-4 md:px-10 py-5 font-medium space-y-8">
                         <p>
                             Here is an comparison between SQL and NoSQL databases:
                         </p>
@@ -65,12 +65,12 @@ const Blogs = () => {
                 </div>
 
                 <div className="max-w-4xl mx-auto border-2 bg-base-100 rounded shadow-xl mb-14">
-                    <div className="px-10 py-5 bg-base-300">
+                    <div className="px-4 md:px-10 py-5 bg-base-300">
                         <h4 className="text-2xl font-medium">
                             3. What is express js? What is Nest JS?
                         </h4>
                     </div>
-                    <div className="px-10 py-5 font-medium space-y-8">
+                    <div className="px-4 md:px-10 py-5 font-medium space-y-8">
                         <p>
                             Express.js is a lightweight and adaptable Node.js online application framework that offers a comprehensive set of functionality for creating single- and multi-page, as well as hybrid, web apps.
                         </p>
@@ -82,12 +82,12 @@ const Blogs = () => {
 
 
                 <div className="max-w-4xl mx-auto border-2 bg-base-100 rounded shadow-xl mb-14">
-                    <div className="px-10 py-5 bg-base-300">
+                    <div className="px-4 md:px-10 py-5 bg-base-300">
                         <h4 className="text-2xl font-medium">
                             4. What is MongoDB aggregate and how does it work?
                         </h4>
                     </div>
-                    <div className="px-10 py-5 font-medium space-y-8">
+                    <div className="px-4 md:px-10 py-5 font-medium space-y-8">
                         <p>
                             MongoDB aggregate is a function that performs an aggregation operation using the aggregation pipeline.
                         </p>

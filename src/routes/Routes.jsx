@@ -11,6 +11,9 @@ import NotFound from "../pages/NotFound/NotFound/NotFound";
 import ToyDetails from "../pages/ToyDetails/ToyDetails/ToyDetails";
 import PrivateRoute from "./PrivateRoute";
 import UpdateToy from "../pages/UpdateToy/UpdateToy/UpdateToy";
+import SingleNews from "../pages/SingleNews/SingleNews";
+import AboutUs from "../pages/AboutUs/AboutUs";
+import MyCollections from "../pages/MyCollections/MyCollections";
 
 const router = createBrowserRouter([
     {
@@ -22,29 +25,41 @@ const router = createBrowserRouter([
                 element: <Home></Home>
             },
             {
-                path: 'blogs',
+                path: '/blogs',
                 element: <Blogs></Blogs>
             },
             {
-                path: 'alltoys',
+                path: '/aboutus',
+                element: <AboutUs></AboutUs>
+            },
+            {
+                path: '/alltoys',
                 element: <AllToys></AllToys>,
                 loader: () => fetch('https://toy-marketplace-server-gray-beta.vercel.app/toys')
             },
             {
-                path: 'mytoys',
+                path: '/mytoys',
                 element: <PrivateRoute><MyToys></MyToys></PrivateRoute>
             },
             {
-                path: 'addatoy',
+                path: '/addatoy',
                 element: <PrivateRoute><AddAToy></AddAToy></PrivateRoute>
             },
             {
-                path: 'login',
+                path: '/mycollections',
+                element: <PrivateRoute><MyCollections></MyCollections></PrivateRoute>
+            },
+            {
+                path: '/login',
                 element: <Login></Login>
             },
             {
-                path: 'register',
+                path: '/register',
                 element: <Register></Register>
+            },
+            {
+                path: '/news/:id',
+                element: <SingleNews></SingleNews>
             },
             {
                 path: 'toy/:id',

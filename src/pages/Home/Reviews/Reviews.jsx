@@ -1,42 +1,64 @@
-import React from 'react';
 import { Rating } from '@smastrom/react-rating';
 import '@smastrom/react-rating/style.css';
+import { Flip } from 'react-awesome-reveal';
+
+import { useState } from 'react';
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import { EffectFlip, Autoplay } from 'swiper/modules';
+
+import 'swiper/css';
+import 'swiper/css/effect-flip';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import { useEffect } from 'react';
+import { delay } from 'framer-motion';
 
 const Reviews = () => {
+    const [reviews, setReviews] = useState([]);
+
+    useEffect(() => {
+        fetch('/reviews.json')
+            .then(res => res.json())
+            .then(data => setReviews(data));
+    }, []);
+
     return (
-        <div class="py-20">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h3 class="text-3xl font-semibold text-gray-800 mb-16 text-center">Customer Reviews</h3>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 mt-12">
-                    <div class="bg-white rounded-lg shadow-md py-6 px-8 border-2">
-                        <p class="text-gray-800 mb-4">"I purchased an Iron man action figure toy for my little son. My son was delighted
-                            to find it so realistic."</p>
-                        <Rating
-                            style={{ maxWidth: 150 }}
-                            readOnly
-                            value={4.5}
-                        />
-                        <p class="text-gray-600 mt-3">- Rehan Kabir</p>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-md py-6 px-8 border-2">
-                        <p class="text-gray-800 mb-4">"I purchased from this website for several times now for my daughter. Always gives solid built quality toys."</p>
-                        <Rating
-                            style={{ maxWidth: 150 }}
-                            readOnly
-                            value={4.8}
-                        />
-                        <p class="text-gray-600 mt-3">- Maria Jahan</p>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-md py-6 px-8 border-2">
-                        <p class="text-gray-800 mb-4">"I have no issue with the action figures. Buy you guys need to work on your delivery time. Its still slow."</p>
-                        <Rating
-                            style={{ maxWidth: 150 }}
-                            readOnly
-                            value={4}
-                        />
-                        <p class="text-gray-600 mt-3">- Ahsan Ahmed</p>
-                    </div>
-                </div>
+        <div class="mt-28">
+            <div class="max-w-[1380px] bg-black mx-4 md:mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-36 rounded-sm overflow-hidden">
+                <Flip direction='horizontal'>
+                    <h2 className="mb-20 text-center text-3xl md:text-4xl text-white font-semibold tracking-wide">
+                        Customer Reviews
+                    </h2>
+                </Flip>
+                <Swiper
+                    effect={'flip'}
+                    grabCursor={true}
+                    autoplay={{
+                        delay: 3000,
+                        disableOnInteraction: false,
+                    }}
+                    loop={true}
+                    modules={[EffectFlip, Autoplay]}
+                    className="mySwiper overflow-hidden"
+                >
+                    {
+                        reviews.map(review => <div key={review.id}>
+                            <SwiperSlide >
+                                <div class="bg-white md:w-[600px] mx-auto rounded-lg shadow-md py-10 px-4 md:px-16 border-2">
+                                    <p class="text-black text-lg md:text-xl mb-4">{review.feedback}</p>
+                                    <Rating
+                                        style={{ maxWidth: 150 }}
+                                        readOnly
+                                        value={review.rating}
+                                    />
+                                    <p class="text-gray-900 text-base md:text-lg mt-5">- {review.name}</p>
+                                </div>
+                            </SwiperSlide>
+                        </div>)
+                    }
+                </Swiper>
             </div>
         </div>
     );

@@ -53,8 +53,35 @@ const Login = () => {
             .then(result => {
                 const loggedUser = result.user;
                 // console.log(loggedUser);
+                const savedUser = {
+                    name: loggedUser.displayName,
+                    email: loggedUser.email,
+                    profilePic: loggedUser.photoURL,
+                    role: 'User',
+                };
+
+                fetch(`http://localhost:5000/users/${loggedUser?.email}`)
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data === null) {
+                            fetch('http://localhost:5000/users', {
+                                method: 'POST',
+                                headers: {
+                                    'content-type': 'application/json'
+                                },
+                                body: JSON.stringify(savedUser)
+                            })
+                                .then(res => res.json())
+                                .then(data => {
+                                    // console.log(data);
+                                    if (data.insertedId) {
+                                        console.log('user saved to the data base...');
+                                    }
+                                })
+                        }
+                    });
                 setSuccess('User Logged In Successfully...');
-                navigate(from, { replace: true });
+                navigate('/');
             })
             .catch(error => {
                 console.log(error);

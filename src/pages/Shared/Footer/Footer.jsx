@@ -5,7 +5,7 @@ import { FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
     return (
-        <footer className="footer footer-center flex flex-col lg:flex-row justify-between items-center py-8 px-16 bg-base-200 text-base-content rounded gap-16 lg:gap-8 border-t-2 shadow-sm">
+        <footer className="footer footer-center flex flex-col lg:flex-row justify-between items-center py-8 px-16 bg-black text-white gap-16 lg:gap-8 shadow-sm">
             <div>
                 <div className="space-y-2">
                     <h3 className="text-2xl font-semibold">Contact Us</h3>
@@ -14,7 +14,7 @@ const Footer = () => {
                 </div>
             </div>
             <div>
-                <div className="flex text-xl text-orange-500">
+                <div className="flex text-xl text-[#f7ea68]">
                     <GiHoodedFigure className="text-3xl" />
                     <span className="ml-2 font-bold">Toys Yard</span>
                 </div>

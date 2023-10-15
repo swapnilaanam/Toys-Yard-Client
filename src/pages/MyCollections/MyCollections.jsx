@@ -1,11 +1,14 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { AuthContext } from '../../../providers/AuthProvider';
-import MyToyRow from '../MyToyRow/MyToyRow';
+import { AuthContext } from '../../providers/AuthProvider';
+import MyCollectionsRow from '../MyCollectionRow/MyCollectionRow';
 import Swal from 'sweetalert2/dist/sweetalert2.js'
-import useTitle from '../../../hooks/useTitle';
+import useTitle from '../../hooks/useTitle';
 
-const MyToys = () => {
-    useTitle('My Toys');
+
+
+
+const MyCollections = () => {
+    useTitle('My Collections');
 
     const [myToys, setMyToys] = useState([]);
 
@@ -89,12 +92,12 @@ const MyToys = () => {
                     </thead>
                     <tbody>
                         {
-                            myToys.map(toy => <MyToyRow
+                            myToys.map(toy => <MyCollectionsRow
                                 key={toy._id}
                                 toy={toy}
                                 handleDeleteToy={handleDeleteToy}
                             >
-                            </MyToyRow>)
+                            </MyCollectionsRow>)
                         }
                     </tbody>
 
@@ -104,4 +107,4 @@ const MyToys = () => {
     );
 };
 
-export default MyToys;
+export default MyCollections;

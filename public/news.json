@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "image": "https://i.ibb.co/pynCZXp/naruto-news.jpg",
+        "heading": "Naruto Sequel Rumors Spark Fan Speculation",
+        "short": "Whispers of a Naruto sequel have set fans abuzz, leaving them to speculate about the potential continuation of their beloved ninja saga.",
+        "body": "Rumors are swirling in the Naruto community as hints of a possible sequel to the iconic anime have emerged. Enthusiasts are eagerly discussing the potential storyline, character developments, and how the ninja world might evolve. While official confirmation is awaited, excitement among fans is reaching fever pitch. Stay tuned for updates on this eagerly anticipated possibility."
+    },
+    {
+        "id": 2,
+        "image": "https://i.ibb.co/VqT8zX0/dcu-news.jpg",
+        "heading": "DC Comics Celebrates 85 Years of Iconic Superheroes",
+        "short": "DC Comics marks 85 years of captivating readers with legendary superheroes, showcasing a rich history of storytelling that continues to inspire fans around the world.",
+        "body": "DC Comics, a powerhouse in the world of superheroes, is celebrating 85 years of bringing iconic characters to life. From Superman's debut in 1938 to the modern era of complex narratives, DC's rich history of storytelling has left an indelible mark on pop culture. As fans reflect on their favorite moments, the legacy of these beloved characters is poised to endure for years to come."
+    },
+    {
+        "id": 3,
+        "image": "https://i.ibb.co/kczbYdj/mcu-news.jpg",
+        "heading": "MCU: A Decade of Blockbuster Brilliance",
+        "short": "The Marvel Cinematic Universe (MCU) has redefined filmmaking with its interconnected superhero stories, captivating audiences worldwide for over a decade.",
+        "body": "The Marvel Cinematic Universe (MCU) has left an indelible mark on the cinematic landscape. Spanning over a decade and numerous interconnected films, the MCU has transformed how audiences experience storytelling on the big screen. With its diverse cast of characters, thrilling action sequences, and intricate narratives, the MCU has redefined the superhero genre, setting new standards for blockbuster entertainment. As fans eagerly anticipate each new installment, the MCU continues to be a testament to the power of creative vision and the enduring appeal of larger-than-life adventures."
+    },
+    {
+        "id": 4,
+        "image": "https://i.ibb.co/YdY9Mv8/action-figure-news.jpg",
+        "heading": "Action Figures: Tiny Gateways to Epic Worlds",
+        "short": "Action figures, compact embodiments of fictional legends, offer fans a tangible connection to their favorite universes, letting imagination run wild in the palms of their hands.",
+        "body": "Action figures, those pint-sized heroes and villains, hold a magical allure that transcends age and time. These meticulously designed collectibles pack an incredible amount of detail into their compact forms, allowing fans to hold a piece of their favorite worlds right in their hands."
+    }
+]

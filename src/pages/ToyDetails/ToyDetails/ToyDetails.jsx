@@ -12,10 +12,10 @@ const ToyDetails = () => {
     const { toyPhoto, toyName, sellerName, sellerEmail, price, rating, quantity, description } = toyDetails;
 
     return (
-        <div className="py-16 bg-[cornsilk]">
-            <div className="max-w-7xl mx-auto flex px-4 flex-col lg:flex-row justify-center items-center lg:items-start gap-40">
+        <div className="py-16 bg-yellow-100">
+            <div className="max-w-7xl mx-auto flex px-4 flex-col lg:flex-row justify-center items-center lg:items-start gap-10 md:gap-40">
                 <div className="border-2 shadow-xl rounded-lg p-10 bg-white">
-                    <img src={toyPhoto} alt="" className="w-[450px] h-[450px] rounded-lg" />
+                    <img src={toyPhoto} alt="" className="w-[450px] h-[350px] md:h-[450px] rounded-lg" />
                 </div>
                 <div className="text-center lg:text-left lg:mt-10 space-y-5 text-gray-900">
                     <h2 className="text-2xl font-medium">

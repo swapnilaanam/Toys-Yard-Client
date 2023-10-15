@@ -1,0 +1,23 @@
+[
+    {
+        "title": "Attack on Titan",
+        "author": "Hajime Isayama",
+        "description": "The story is set in a world where humanity lives inside cities surrounded by enormous walls due to the Titans, gigantic humanoid creatures who devour humans seemingly without reason.",
+        "readLink": "https://aotmanga.com",
+        "image": "https://m.media-amazon.com/images/I/91M9VaZWxOL._AC_UF894,1000_QL80_.jpg"
+    },
+    {
+        "title": "One Piece",
+        "author": "Eiichiro Oda",
+        "description": "The story follows Monkey D. Luffy, a young man whose body gains the properties of rubber after unintentionally eating a Devil Fruit. With his diverse crew of pirates, named the Straw Hat Pirates, Luffy explores the Grand Line in search of the world's ultimate treasure known as 'One Piece' in order to become the Pirate King.",
+        "readLink": "https://mangaplus.shueisha.co.jp/titles/100020",
+        "image": "https://m.media-amazon.com/images/I/71y+XnBXm4L._AC_UF1000,1000_QL80_.jpg"
+    },
+    {
+        "title": "Berserk",
+        "author": "Kentaro Miura",
+        "description": "The story follows the journey of Guts, a lone mercenary warrior, as he travels a medieval-inspired world in search of vengeance.",
+        "readLink": "https://readberserk.com",
+        "image": "https://cdn.kobo.com/book-images/b7ccda5d-c44e-4041-a1d4-382e69c641a1/1200/1200/False/berserk-volume-1.jpg"
+    }
+]

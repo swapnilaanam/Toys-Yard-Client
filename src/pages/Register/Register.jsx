@@ -1,11 +1,13 @@
 import React, { useContext, useState } from 'react';
 import loginImg from '../../assets/images/login-2.png';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 import useTitle from '../../hooks/useTitle';
 
 const Register = () => {
     useTitle('Register');
+
+    const navigate = useNavigate();
 
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
@@ -21,8 +23,9 @@ const Register = () => {
         const photo = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
+        const role = form.role.value;
 
-        // console.log(name, photo, email, password);
+        // console.log(name, photo, email, password, role);
 
         setError('');
         setSuccess('');
@@ -33,15 +36,9 @@ const Register = () => {
                 console.log(createdUser);
                 setSuccess('User Registered Successfully...');
 
-                handleUpdateUser(createdUser, name, photo);
+                handleUpdateUser(createdUser, name, email, photo, role);
 
                 form.reset();
-
-                logOut()
-                    .then(() => { })
-                    .catch(error => {
-                        console.log(error);
-                    });
             })
             .catch(error => {
                 console.log(error);
@@ -49,9 +46,30 @@ const Register = () => {
             });
     }
 
-    const handleUpdateUser = (user, name, photo) => {
+    const handleUpdateUser = (user, name, email, photo, role) => {
         updateUser(user, name, photo)
-            .then(() => { })
+            .then(() => {
+                const savedUser = { name: name, email: email, profilePic: photo, role: role};
+                // console.log(savedUser);
+                fetch('http://localhost:5000/users', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(savedUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        // console.log(data);
+                        if (data.insertedId) {
+                            logOut()
+                                .then(() => {
+                                    navigate('/login');
+                                })
+                                .catch(error => console.log(error));
+                        }
+                    })
+            })
             .catch(error => {
                 console.log(error);
                 setError(error.message);
@@ -93,6 +111,16 @@ const Register = () => {
                                     <span className="label-text text-xl">Password</span>
                                 </label>
                                 <input type="password" name="password" placeholder="Password" className="input input-bordered" required />
+                            </div>
+
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text text-xl">Role</span>
+                                </label>
+                                <select name="role" className="select select-bordered">
+                                    <option value="User">User</option>
+                                    <option value="Owner">Owner</option>
+                                </select>
                             </div>
 
                             <p className="font-medium text-lg text-red-500 mt-1">{error}</p>

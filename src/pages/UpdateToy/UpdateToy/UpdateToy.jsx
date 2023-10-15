@@ -52,8 +52,8 @@ const UpdateToy = () => {
     }
 
     return (
-        <div className="bg-[cornsilk] bg-opacity-50 py-20">
-            <div className="max-w-2xl mx-auto p-10 pt-8 bg-base-100 border-2 rounded-lg shadow-lg">
+        <div className="bg-yellow-100 bg-opacity-50 py-20">
+            <div className="max-w-2xl mx-4 md:mx-auto px-5 py-7 md:p-10 bg-base-100 border-2 rounded-lg shadow-lg">
                 <h2 className="text-2xl text-center font-semibold mb-4">Update Toy</h2>
                 <form onSubmit={handleUpdateToy}>
                     <div className="form-control">
