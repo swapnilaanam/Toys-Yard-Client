@@ -1,16 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const MyCollectionsRow = ({ toy, handleDeleteToy }) => {
-    const { _id, sellerName, toyName, subCategory, price, quantity } = toy;
+const MyCollectionsRow = ({ toy }) => {
+    const { sellerName, toyPhoto, toyName, price, quantity } = toy;
 
     return (
         <tr>
-            <th>
-                {toyName}
+            <th className="flex justify-center items-center">
+                <img src={toyPhoto} alt='Toy' className='w-16 h-16'></img>
             </th>
             <td>
-                {subCategory}
+                {toyName}
             </td>
             <td>
                 {sellerName}
@@ -25,19 +25,6 @@ const MyCollectionsRow = ({ toy, handleDeleteToy }) => {
                     {quantity}
                 </span>
             </td>
-            <th className="space-x-4">
-                <Link to={`/toy/${_id}`}>
-                    <button className="btn btn-success capitalize">View Details</button>
-                </Link>
-                <Link to={`/toy/update/${_id}`}>
-                    <button className="btn btn-warning capitalize">Edit</button>
-                </Link>
-                <button onClick={() => handleDeleteToy(_id)} className="btn bg-red-500 border-red-500
-                 hover:bg-red-500 hover:text-white hover:border-red-500 capitalize"
-                >
-                    Delete
-                </button>
-            </th>
         </tr>
     );
 };

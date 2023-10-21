@@ -14,6 +14,8 @@ import UpdateToy from "../pages/UpdateToy/UpdateToy/UpdateToy";
 import SingleNews from "../pages/SingleNews/SingleNews";
 import AboutUs from "../pages/AboutUs/AboutUs";
 import MyCollections from "../pages/MyCollections/MyCollections";
+import CheckOut from "../pages/CheckOut/CheckOut";
+import Payment from "../pages/Payment/Payment";
 
 const router = createBrowserRouter([
     {
@@ -70,6 +72,14 @@ const router = createBrowserRouter([
                 path: 'toy/update/:id',
                 element: <PrivateRoute><UpdateToy></UpdateToy></PrivateRoute>,
                 loader: ({ params }) => fetch(`https://toy-marketplace-server-gray-beta.vercel.app/toys/${params.id}`)
+            }, 
+            {
+                path: 'checkout/:id',
+                element: <PrivateRoute><CheckOut></CheckOut></PrivateRoute>
+            },
+            {
+                path: 'payment/:id',
+                element: <PrivateRoute><Payment></Payment></PrivateRoute>
             }
         ]
     },
