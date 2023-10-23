@@ -12,19 +12,19 @@ const MyCollections = () => {
     const { user } = useContext(AuthContext);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/mycollections?email=${user?.email}`)
+        fetch(`https://toy-marketplace-server-gray-beta.vercel.app/mycollections?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setMyCollections(data));
     }, []);
 
     const sortByPriceAscending = () => {
-        fetch(`http://localhost:5000/mycollections/sort?order=Ascending&email=${user?.email}`)
+        fetch(`https://toy-marketplace-server-gray-beta.vercel.app/mycollections/sort?order=Ascending&email=${user?.email}`)
             .then(res => res.json())
             .then(data => setMyCollections(data));
     }
 
     const sortByPriceDescending = () => {
-        fetch(`http://localhost:5000/mycollections/sort?order=Descending&email=${user?.email}`)
+        fetch(`https://toy-marketplace-server-gray-beta.vercel.app/mycollections/sort?order=Descending&email=${user?.email}`)
             .then(res => res.json())
             .then(data => setMyCollections(data));
     }

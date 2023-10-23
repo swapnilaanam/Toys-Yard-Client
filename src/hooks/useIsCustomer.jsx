@@ -9,7 +9,7 @@ const useIsCustomer = () => {
     const { user } = useContext(AuthContext);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/users/role/customer/${user?.email}`)
+        fetch(`https://toy-marketplace-server-gray-beta.vercel.app/users/role/customer/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setIsCustomer(data);

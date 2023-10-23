@@ -9,7 +9,7 @@ const useIsOwner = () => {
     const { user } = useContext(AuthContext);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/users/role/owner/${user?.email}`)
+        fetch(`https://toy-marketplace-server-gray-beta.vercel.app/users/role/owner/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setIsOwner(data);

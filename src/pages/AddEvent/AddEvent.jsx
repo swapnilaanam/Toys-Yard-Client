@@ -17,7 +17,7 @@ const AddEvent = () => {
 
         const newEvent = { eventName, eventPhoto, eventStartDate, eventEndDate, eventDetails };
 
-        fetch(`http://localhost:5000/events`, {
+        fetch(`https://toy-marketplace-server-gray-beta.vercel.app/events`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

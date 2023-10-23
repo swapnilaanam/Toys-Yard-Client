@@ -9,7 +9,7 @@ const useIsAdmin = () => {
     const { user } = useContext(AuthContext);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/users/role/admin/${user?.email}`)
+        fetch(`https://toy-marketplace-server-gray-beta.vercel.app/users/role/admin/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setIsAdmin(data);

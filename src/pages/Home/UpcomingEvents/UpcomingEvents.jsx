@@ -8,7 +8,7 @@ const UpcomingEvents = () => {
     const [events, setEvents] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/events')
+        fetch('https://toy-marketplace-server-gray-beta.vercel.app/events')
             .then(res => res.json())
             .then(data => setEvents(data.slice(data.length - 3, data.length)));
     }, []);

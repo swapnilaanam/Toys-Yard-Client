@@ -60,11 +60,11 @@ const Login = () => {
                     role: 'User',
                 };
 
-                fetch(`http://localhost:5000/users/${loggedUser?.email}`)
+                fetch(`https://toy-marketplace-server-gray-beta.vercel.app/users/${loggedUser?.email}`)
                     .then(res => res.json())
                     .then(data => {
                         if (data === null) {
-                            fetch('http://localhost:5000/users', {
+                            fetch('https://toy-marketplace-server-gray-beta.vercel.app/users', {
                                 method: 'POST',
                                 headers: {
                                     'content-type': 'application/json'

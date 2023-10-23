@@ -18,7 +18,7 @@ const CheckOutForm = ({ toyInfo, price }) => {
     useEffect(() => {
         if (price && price > 0) {
 
-            fetch('http://localhost:5000/create-payment-intent', {
+            fetch('https://toy-marketplace-server-gray-beta.vercel.app/create-payment-intent', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
@@ -100,7 +100,7 @@ const CheckOutForm = ({ toyInfo, price }) => {
                 sellerEmail: toyInfo?.sellerEmail
             };
 
-            fetch('http://localhost:5000/payments', {
+            fetch('https://toy-marketplace-server-gray-beta.vercel.app/payments', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
@@ -110,7 +110,7 @@ const CheckOutForm = ({ toyInfo, price }) => {
                 .then(res => res.json())
                 .then(data => {
                     if (data.insertedId) {
-                        fetch('http://localhost:5000/mycollections', {
+                        fetch('https://toy-marketplace-server-gray-beta.vercel.app/mycollections', {
                             method: 'POST',
                             headers: {
                                 'content-type': 'application/json'
@@ -120,7 +120,7 @@ const CheckOutForm = ({ toyInfo, price }) => {
                             .then(res => res.json())
                             .then(data => {
                                 if (data.insertedId || data.modifiedCount > 0) {
-                                    fetch(`http://localhost:5000/toys/quantity/${toyInfo?.toyId}`, {
+                                    fetch(`https://toy-marketplace-server-gray-beta.vercel.app/toys/quantity/${toyInfo?.toyId}`, {
                                         method: 'PATCH',
                                         headers: {
                                             'content-type': 'application/json',
