@@ -14,7 +14,7 @@ const LatestNews = () => {
     }, []);
 
     return (
-        <div className="mt-28">
+        <div className="mt-28 px-4 lg:px-0">
             <div className="max-w-[1380px] mx-auto bg-black pt-28 pb-36 rounded-sm">
                 <Flip direction='horizontal'>
                     <h2 className="mb-20 text-center text-3xl md:text-4xl text-white font-semibold tracking-wide">
@@ -23,7 +23,7 @@ const LatestNews = () => {
                 </Flip>
                 <div className="grid grid-cols-1 md:grid-cols-2 justify-center justify-items-center items-start gap-12 mx-7 mt-20">
                     {
-                        news.map(singleNews => <div className="card card-compact md:w-[600px] bg-base-100 shadow-xl">
+                        news.map(singleNews => <div key={singleNews?.id} className="card card-compact md:w-[600px] bg-base-100 shadow-xl">
                             <figure><img src={singleNews.image} alt="News" className="w-full h-[200px] object-cover" /></figure>
                             <div className="card-body">
                                 <h2 className="card-title">{singleNews.heading}</h2>

@@ -1,14 +1,17 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link, useNavigate } from 'react-router-dom';
 import { Rating } from '@smastrom/react-rating';
 import '@smastrom/react-rating/style.css';
 import { AuthContext } from '../../../providers/AuthProvider';
+import useIsCustomer from '../../../hooks/useIsCustomer';
 
 const CategoryToyCard = ({ toyInfo }) => {
-    const { _id, toyPhoto, toyName, price, rating, sellerName, sellerEmail,  } = toyInfo;
+    const { _id, toyPhoto, toyName, price, rating, sellerName, sellerEmail, } = toyInfo;
 
-    const {user} = useContext(AuthContext);
+    const [isCustomer, isCustomerLoading] = useIsCustomer();
+
+    const { user } = useContext(AuthContext);
 
     const navigate = useNavigate();
 
@@ -31,9 +34,9 @@ const CategoryToyCard = ({ toyInfo }) => {
 
     return (
         <motion.div
-            initial={{transform: "scaleX(0.5)"}}
-            whileInView={{transform: "scaleX(1)"}}
-            transition={{ duration: 1 }}
+            initial={{ transform: "scaleX(0.7)" }}
+            whileInView={{ transform: "scaleX(1)" }}
+            transition={{ duration: 0.7 }}
         >
             <div className="card card-compact w-72 md:w-80 bg-[#f8f5ea] border-2 border-gray-300 shadow-2xl rounded-md">
                 <img src={toyPhoto} alt="action figure toy" className="h-64 p-7 bg-white object-contain" />
@@ -53,7 +56,9 @@ const CategoryToyCard = ({ toyInfo }) => {
                         <Link to={`/toy/${_id}`}>
                             <button className="btn btn-sm btn-warning font-medium text-sm capitalize">View Details</button>
                         </Link>
-                        <button onClick={handleBuyNow} className="btn btn-sm btn-nuetral font-medium text-sm capitalize">Buy Now</button>
+                        <button onClick={handleBuyNow} className="btn btn-sm btn-nuetral font-medium text-sm capitalize" disabled={!isCustomer && true}>
+                            Buy Now
+                        </button>
                     </div>
                 </div>
             </div>

@@ -4,8 +4,6 @@ import MyCollectionsRow from '../MyCollectionRow/MyCollectionRow';
 import useTitle from '../../hooks/useTitle';
 
 
-
-
 const MyCollections = () => {
     useTitle('My Collections');
 

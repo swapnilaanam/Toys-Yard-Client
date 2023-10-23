@@ -27,12 +27,12 @@ const MyToyRow = ({ toy, handleDeleteToy }) => {
             </td>
             <th className="space-x-4">
                 <Link to={`/toy/${_id}`}>
-                    <button className="btn btn-success capitalize">View Details</button>
+                    <button className="btn btn-sm btn-success capitalize">View Details</button>
                 </Link>
                 <Link to={`/toy/update/${_id}`}>
-                    <button className="btn btn-warning capitalize">Edit</button>
+                    <button className="btn btn-sm btn-warning capitalize">Edit</button>
                 </Link>
-                <button onClick={() => handleDeleteToy(_id)} className="btn bg-red-500 border-red-500
+                <button onClick={() => handleDeleteToy(_id)} className="btn btn-sm bg-red-500 border-red-500
                  hover:bg-red-500 hover:text-white hover:border-red-500 capitalize"
                 >
                     Delete

@@ -90,7 +90,7 @@ const Login = () => {
     }
 
     return (
-        <div className="hero pt-14 pb-20 bg-base-100">
+        <div className="hero pt-14 pb-20 bg-yellow-100 px-4 lg:px-0">
             <div className="hero-content flex-col lg:flex-row gap-8">
                 <div className="w-full lg:w-1/2">
                     <img src={loginImg} alt="login" />

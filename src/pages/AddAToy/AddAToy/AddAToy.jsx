@@ -62,7 +62,7 @@ const AddAToy = () => {
     }
 
     return (
-        <div className="bg-[cornsilk] bg-opacity-50 py-20">
+        <div className="bg-yellow-100 py-20 px-4 lg:px-0">
             <div className="max-w-4xl mx-auto p-10 pt-8 bg-base-100 border-2 rounded-lg shadow-lg">
                 <h2 className="text-2xl text-center font-semibold mb-4">Add Toy</h2>
                 <form onSubmit={handleAddToy}>
@@ -140,8 +140,8 @@ const AddAToy = () => {
                     <input
                         type="submit"
                         value="Add Toy"
-                        className="w-full mt-8 bg-blue-500 text-white font-bold py-4 px-4 rounded-md
-                         hover:bg-blue-600 transition-colors duration-300 cursor-pointer"
+                        className="w-full mt-8 bg-green-600 text-white font-bold py-4 px-4 rounded-md
+                         hover:bg-green-700 transition-colors duration-300 cursor-pointer"
                     />
                 </form>
             </div>

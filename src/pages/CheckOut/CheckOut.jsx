@@ -8,7 +8,7 @@ const CheckOut = () => {
     }, [])
 
     return (
-        <div className="py-24 bg-green-100 px-4 lg:px-0">
+        <div className="py-24 bg-yellow-100 px-4 lg:px-0">
             <div className="max-w-2xl mx-auto ">
                 <div className="flex flex-col bg-white border-2 shadow-xl rounded-md px-5 py-12 text-sm gap-5">
                     <div className="flex justify-between gap-2">

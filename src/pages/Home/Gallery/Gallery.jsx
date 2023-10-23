@@ -13,7 +13,7 @@ import gallery8 from '../../../assets/images/gallery/captain.png';
 
 const Gallery = () => {
     return (
-        <div className="mt-28">
+        <div className="mt-28 px-4 lg:px-0">
             <div className="max-w-6xl mx-auto overflow-hidden">
                 <Flip direction='horizontal'>
                     <h3 className="text-center text-3xl md:text-4xl text-black font-semibold mx-2 lg:mx-0">Gallery Of Action Figures</h3>

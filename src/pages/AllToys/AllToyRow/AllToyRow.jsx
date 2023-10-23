@@ -1,11 +1,14 @@
 import React, { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
+import useIsCustomer from '../../../hooks/useIsCustomer';
 
 const AllToyRow = ({ toy }) => {
     const { _id, sellerName, sellerEmail, toyPhoto, toyName, subCategory, price, quantity } = toy;
 
     const { user } = useContext(AuthContext);
+
+    const [isCustomer, isCustomerLoading] = useIsCustomer();
 
     const navigate = useNavigate();
 
@@ -51,7 +54,9 @@ const AllToyRow = ({ toy }) => {
                 <Link to={`/toy/${_id}`}>
                     <button className="btn btn-warning btn-sm capitalize">View Details</button>
                 </Link>
-                <button onClick={handleBuyNow} className="btn btn-sm btn-nuetral font-medium text-sm capitalize">Buy Now</button>
+                <button onClick={handleBuyNow} className="btn btn-sm btn-nuetral font-medium text-sm capitalize" disabled={!isCustomer && true}>
+                    Buy Now
+                </button>
             </th>
         </tr>
     );

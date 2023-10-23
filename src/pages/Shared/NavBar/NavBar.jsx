@@ -4,11 +4,15 @@ import { Link } from 'react-router-dom';
 import { GiHoodedFigure } from "react-icons/gi";
 import { AuthContext } from '../../../providers/AuthProvider';
 import useIsOwner from '../../../hooks/useIsOwner';
+import useIsCustomer from '../../../hooks/useIsCustomer';
+import useIsAdmin from '../../../hooks/useIsAdmin';
 
 const NavBar = () => {
     const { user, logOut } = useContext(AuthContext);
 
     const [isOwner, isOwnerLoading] = useIsOwner();
+    const [isCustomer, isCustomerLoading] = useIsCustomer();
+    const [isAdmin, isAdminLoading] = useIsAdmin();
 
     const handleLogOut = () => {
         logOut()
@@ -24,10 +28,10 @@ const NavBar = () => {
         <li><ActiveLink to="/alltoys">All Toys</ActiveLink></li>
         {
             user ? <>
-                {(!isOwnerLoading && isOwner) ? <li><ActiveLink to="/mytoys">MyToys</ActiveLink></li> :
-                    <li><ActiveLink to="/mycollections">MyCollections</ActiveLink></li>
-                }
-                {(!isOwnerLoading && isOwner) && <li><ActiveLink to="/addatoy">Add A Toy</ActiveLink></li>}
+                {(!isOwnerLoading && isOwner) && <li><ActiveLink to="/mytoys">My Toys</ActiveLink></li>}
+                {(!isOwnerLoading && isOwner) && <li><ActiveLink to="/addatoy">Add Toy</ActiveLink></li>}
+                {(!isCustomerLoading && isCustomer) && <li><ActiveLink to="/mycollections">My Collections</ActiveLink></li>}
+                {(!isAdminLoading && isAdmin) && <li><ActiveLink to="/addevent">Add Event</ActiveLink></li>}
                 <li>
                     <div className="dropdown dropdown-end dropdown-hover hover:bg-transparent">
                         <label tabIndex={1} className="btn btn-ghost btn-circle avatar">
@@ -35,9 +39,9 @@ const NavBar = () => {
                                 <img src={user?.photoURL} />
                             </div>
                         </label>
-                        <ul tabIndex={0} className="mr-48 lg:mr-0 lg:mt-32 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
+                        <ul tabIndex={0} className="mr-48 lg:mr-0 lg:mt-32 p-2 shadow menu menu-compact dropdown-content lg:bg-base-100 rounded-box w-52">
                             <li>
-                                <h4 className="justify-between">
+                                <h4 className="hidden lg:block justify-between">
                                     {user?.displayName}
                                 </h4>
                             </li>

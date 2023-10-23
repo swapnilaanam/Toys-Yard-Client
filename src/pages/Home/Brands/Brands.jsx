@@ -7,14 +7,14 @@ import { Flip } from 'react-awesome-reveal';
 
 const Brands = () => {
     return (
-        <div className="pt-28 pb-40">
+        <div className="pt-32 pb-20 px-4 lg:px-0">
             <div className="max-w-7xl mx-auto">
                 <Flip direction='horizontal'>
                     <h2 className="mb-20 text-center text-3xl md:text-4xl text-black font-semibold tracking-wide">
                         Our Brand Partners
                     </h2>
                 </Flip>
-                <Marquee>
+                <Marquee speed={200}>
                     <div className='flex justify-center items-center gap-20 px-4'>
                         <img src={img1} alt="logo" className="w-56 h-44 object-cover" />
                         <img src={img2} alt="logo" className="w-56 h-44 object-cover" />

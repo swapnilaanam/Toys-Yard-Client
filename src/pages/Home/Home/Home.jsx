@@ -8,6 +8,10 @@ import Brands from '../Brands/Brands';
 import Features from '../Features/Features';
 import LatestNews from '../LatestNews/LatestNews';
 import MangaCorner from '../MangaCorner/MangaCorner';
+import VideoBanner from '../VideoBanner/VideoBanner';
+import UpcomingEvents from '../UpcomingEvents/UpcomingEvents';
+import SellerBanner from '../SellerBanner/SellerBanner';
+import Faq from '../Faq/Faq';
 
 const Home = () => {
     useTitle('Home');
@@ -18,10 +22,14 @@ const Home = () => {
             <Features></Features>
             <ShopByCategory></ShopByCategory>
             <MangaCorner></MangaCorner>
-            <Reviews></Reviews>
+            <VideoBanner></VideoBanner>
+            <UpcomingEvents></UpcomingEvents>
             <Gallery></Gallery>
+            <Reviews></Reviews>
+            <SellerBanner></SellerBanner>
             <LatestNews></LatestNews>
             <Brands></Brands>
+            <Faq></Faq>
         </div>
     );
 };

@@ -45,7 +45,7 @@ const ShopByCategory = () => {
     }, []);
 
     return (
-        <div className="mt-28">
+        <div className="mt-28 px-4 lg:px-0">
             <Flip direction='horizontal'>
                 <h3 className="mb-20 text-center text-4xl text-black font-semibold tracking-wide">Shop By Category</h3>
             </Flip>
@@ -53,7 +53,7 @@ const ShopByCategory = () => {
                 <TabList className="w-full flex flex-col lg:flex-row justify-center">
                     {
                         subCategories.map(subCategory => <Tab
-                            className="bg-white px-16 py-2 cursor-pointer text-xl font-medium"
+                            className="bg-white px-16 py-2 cursor-pointer text-xl font-medium text-center"
                             key={subCategory._id}
                         >
                             {subCategory?.subCategoryName}

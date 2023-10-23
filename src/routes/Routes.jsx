@@ -16,6 +16,7 @@ import AboutUs from "../pages/AboutUs/AboutUs";
 import MyCollections from "../pages/MyCollections/MyCollections";
 import CheckOut from "../pages/CheckOut/CheckOut";
 import Payment from "../pages/Payment/Payment";
+import AddEvent from "../pages/AddEvent/AddEvent";
 
 const router = createBrowserRouter([
     {
@@ -80,6 +81,10 @@ const router = createBrowserRouter([
             {
                 path: 'payment/:id',
                 element: <PrivateRoute><Payment></Payment></PrivateRoute>
+            },
+            {
+                path: 'addevent',
+                element: <PrivateRoute><AddEvent></AddEvent></PrivateRoute>
             }
         ]
     },
